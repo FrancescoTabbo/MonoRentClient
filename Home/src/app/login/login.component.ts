@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['/']);
         }
     }
-    Login(username :HTMLInputElement,password:HTMLInputElement): void {
+    Login(nickname :HTMLInputElement,password:HTMLInputElement): void {
        const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded'
 
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
 
 
     const params = new HttpParams()
-      .set('username', username.value)
+      .set('nickname', nickname.value)
       .set('password', password.value);
 
       const options = {
@@ -44,9 +44,9 @@ export class LoginComponent implements OnInit {
       withCredentials: false
     };
 
-    var parameter = JSON.stringify({ username: username.value, password: password.value });
+    var parameter = JSON.stringify({ nickname: nickname.value, password: password.value });
     this.loading = true;
-    this.http.post('https://3000-d670e502-c231-409e-b2f8-68e3b042a9da.ws-eu0.gitpod.io/segnalaG',null, options  )
+    this.http.post('https://df7cac6b-cc76-41e1-a520-ee0ac7652c80.ws-eu0.gitpod.io/login',null, options  )
     .pipe(first())
       .subscribe(data => {
         if(data[0].message == "OK"){

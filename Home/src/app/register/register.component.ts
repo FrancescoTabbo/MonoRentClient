@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
             this.router.navigate(['/']);
         }
     }
-    Registrati(Nome:HTMLInputElement, Cognome:HTMLInputElement, Indirizzo:HTMLInputElement, Telefono:HTMLInputElement, Email:HTMLInputElement, Nickname:HTMLInputElement, Password:HTMLInputElement): void {
+    Registrati(Nome:HTMLInputElement, Cognome:HTMLInputElement, Indirizzo:HTMLInputElement, Telefono:HTMLInputElement, Email:HTMLInputElement, nickname:HTMLInputElement, password:HTMLInputElement): void {
       const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded'
 
@@ -37,8 +37,8 @@ export class RegisterComponent implements OnInit {
       .set('Indirizzo', Indirizzo.value)
       .set('Telefono', Telefono.value)
       .set('Email', Email.value)
-      .set('Nickname', Nickname.value)
-      .set('Password', Password.value);
+      .set('nickname', nickname.value)
+      .set('password', password.value);
 
       const options = {
       headers,
@@ -46,9 +46,9 @@ export class RegisterComponent implements OnInit {
       withCredentials: false
     };
 
-    var parameter = JSON.stringify({ Nome: Nome.value, Cognome: Cognome.value,Indirizzo: Indirizzo.value,Telefono: Telefono.value,Email: Email.value,Nickname: Nickname.value, Password: Password.value });
+    var parameter = JSON.stringify({ Nome: Nome.value, Cognome: Cognome.value,Indirizzo: Indirizzo.value,Telefono: Telefono.value,Email: Email.value,nickname: nickname.value, password: password.value });
     this.loading = true;
-    this.http.post('https://3000-d670e502-c231-409e-b2f8-68e3b042a9da.ws-eu0.gitpod.io/segnalaG',null, options  )
+    this.http.post('https://df7cac6b-cc76-41e1-a520-ee0ac7652c80.ws-eu0.gitpod.io/register',null, options  )
       .subscribe(data => {
         if(data[0].message == "OK"){
           this.cookieService.set('ID','username');
