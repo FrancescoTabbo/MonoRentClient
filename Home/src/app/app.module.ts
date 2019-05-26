@@ -2,7 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule }    from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
 
@@ -20,7 +20,8 @@ import { RegisterComponent } from './register';
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
-        routing
+        routing,
+        NgbModule
     ],
     declarations: [
         AppComponent,
