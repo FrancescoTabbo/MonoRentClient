@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default" *ngIf="cookie==true">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">MonoRent</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a (click)="take()">Noleggia</a></li>
+      <li><a (click)="segnala()">Segnala Un Problema</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a *ngIf="cookie==true" (click)="logout()" class="btn btn-default">Esci</a></li>
+    </ul>
+  </div>
+</nav>
+
+<app-login *ngIf="cookie==false"></app-login>
+<app-take *ngIf="cookie==true"></app-take>
+<app-segnala *ngIf="cookie==true"></app-segnala>
