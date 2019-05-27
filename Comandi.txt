@@ -1,8 +1,9 @@
 npm install -g @angular/cli
 ng serve --host 0.0.0.0 --port 8080 --disableHostCheck
-npm install bootstrap
+npm install bootstrap --save
 npm install --save @ng-bootstrap/ng-bootstrap
 @import '~bootstrap/dist/css/bootstrap.css'
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 https://docs.google.com/document/d/12-zc23-WICSMmMf2HPjrDUM6I5pjx6CMJ4UbH4ni0uM/edit
 npm install ngx-cookie-service --save
+npm install @agm/core --save

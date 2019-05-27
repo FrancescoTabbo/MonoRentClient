@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
 
     var parameter = JSON.stringify({ nickname: nickname.value, password: password.value });
     this.loading = true;
-    this.http.post('https://df7cac6b-cc76-41e1-a520-ee0ac7652c80.ws-eu0.gitpod.io/login',null, options  )
+    this.http.post('https://3000-c0ecda88-6304-4e5f-a369-0d9bcbc76e66.ws-eu0.gitpod.io/login',null, options  )
     .pipe(first())
       .subscribe(data => {
         if(data[0].message == "OK"){

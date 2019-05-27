@@ -48,7 +48,7 @@ export class RegisterComponent implements OnInit {
 
     var parameter = JSON.stringify({ Nome: Nome.value, Cognome: Cognome.value,Indirizzo: Indirizzo.value,Telefono: Telefono.value,Email: Email.value,nickname: nickname.value, password: password.value });
     this.loading = true;
-    this.http.post('https://df7cac6b-cc76-41e1-a520-ee0ac7652c80.ws-eu0.gitpod.io/register',null, options  )
+    this.http.post('https://3000-c0ecda88-6304-4e5f-a369-0d9bcbc76e66.ws-eu0.gitpod.io/register',null, options  )
       .subscribe(data => {
         if(data[0].message == "OK"){
           this.cookieService.set('ID','username');
