@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
        const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded'
 
-    });
+      });
 
 
     const params = new HttpParams()
@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
       headers,
       params,
       withCredentials: false
-    };
+      };
 
     var parameter = JSON.stringify({ nickname: nickname.value, password: password.value });
     this.loading = true;
