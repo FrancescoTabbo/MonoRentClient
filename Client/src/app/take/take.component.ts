@@ -24,7 +24,7 @@ export class TakeComponent implements OnInit {
     this.oScot = this.http.get('https://3000-c0ecda88-6304-4e5f-a369-0d9bcbc76e66.ws-eu0.gitpod.io/visualizza');
     this.oScot.subscribe(data => {
         for(var i = 0; i < data; i++){
-          this.Scot.push(new Scooter(data[i]._id, data[i].posizione, data[i].stato));
+          this.Scot.push(new Scooter(data[i]._id, data[i].posizione, data[i].stato, data[i].tipo));
         }
     });
   }
