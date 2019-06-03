@@ -8,7 +8,7 @@ import { CookieService } from 'ngx-cookie-service';
 @Component({templateUrl: 'login.component.html',
 selector: 'app-login',
   styleUrls: ['./login.component.css']
-}})
+})
 export class LoginComponent implements OnInit {
   @Input() cookieService:CookieService;
     loginForm: FormGroup;
