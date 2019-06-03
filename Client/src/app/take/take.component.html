@@ -13,7 +13,7 @@
   <button (click)="takeoff()"> Stop </button>
 </div>
 <agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker *ngFor="let M of Mono" [latitude]="M.Coord.geometry.coordinates[0]" [longitude]="M.Coord.geometry.coordinates[0]"></agm-marker>
+  <agm-marker *ngFor="let M of Scot" [latitude]="M.Coord.geometry.coordinates[0]" [longitude]="M.Coord.geometry.coordinates[0]"></agm-marker>
 </agm-map>
 
 
