@@ -47,6 +47,7 @@ export class LoginComponent implements OnInit {
         if(data[0].message == "OK"){
           this.cookieService.set('ID','username');
           this.router.navigate(['/home']);
+          window.location.reload();
         }
 
     },error => {
