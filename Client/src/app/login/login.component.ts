@@ -5,7 +5,10 @@ import { first } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 
-@Component({templateUrl: 'login.component.html'})
+@Component({templateUrl: 'login.component.html',
+selector: 'app-login',
+  styleUrls: ['./login.component.css']
+}})
 export class LoginComponent implements OnInit {
   @Input() cookieService:CookieService;
     loginForm: FormGroup;
@@ -47,7 +50,7 @@ export class LoginComponent implements OnInit {
         }
 
     },error => {
-                    
+
                     this.loading = false;
                 });
       }

@@ -1,11 +1,13 @@
 export class Scooter{
-  ID: number;
-  Coord: Object;
-  Stato: String;
+  _id: number;
+  posizione: Object;
+  stato: String;
 
-  constructor(ID: number, Coord: Object, Stato: String){
-    this.ID=ID;
-    this.Coord=Coord;
-    this.Stato=Stato;
+
+  constructor(_id: number, posizione: Object, stato: String){
+    this._id=_id;
+    this.posizione=posizione;
+    this.stato=stato;
+
   }
 }
