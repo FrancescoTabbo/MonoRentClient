@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+//import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
@@ -17,8 +18,8 @@ export class LoginComponent implements OnInit {
     returnUrl: string;
 
     constructor(
-        private formBuilder: FormBuilder,
-        private route: ActivatedRoute,
+
+       // private route: ActivatedRoute,
         private router: Router,
         public http: HttpClient
     ){}
@@ -46,7 +47,7 @@ export class LoginComponent implements OnInit {
       .subscribe(data => {
         if(data[0].message == "OK"){
           this.cookieService.set('ID','username');
-          this.router.navigate(['/home']);
+          //this.router.navigate(['/home']);
           window.location.reload();
         }
 
@@ -55,6 +56,11 @@ export class LoginComponent implements OnInit {
                     this.loading = false;
                 });
       }
+
+      register():void{
+      this.router.navigate(['/register']);
+      console.log("router");
+    }
 
     ngOnInit() {
     }

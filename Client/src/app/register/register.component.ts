@@ -43,7 +43,8 @@ export class RegisterComponent implements OnInit {
       .subscribe(data => {
         if(data[0].message == "OK"){
           this.cookieService.set('ID','username');
-          this.router.navigate(['/home']);
+          //this.router.navigate(['/home']);
+          location.reload();
         }
     },error => {
                     this.loading = false;

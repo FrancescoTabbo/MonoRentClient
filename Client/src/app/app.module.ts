@@ -6,6 +6,11 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { SegnalaComponent } from './segnala/segnala.component';
 import { TakeComponent } from './take/take.component';
+import { AgmCoreModule } from '@agm/core';
+import { CookieService } from 'ngx-cookie-service';
+import { AppRoutingModule } from './app.routing';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -17,9 +22,14 @@ import { TakeComponent } from './take/take.component';
   ],
   imports: [
     BrowserModule,
-    NgbModule 
+    NgbModule,
+    AppRoutingModule,
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyB6ofjkhIjlog4Otj8J0b12dZnxKwfVkdU'
+    })
   ],
-  providers: [],
+  providers: [CookieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

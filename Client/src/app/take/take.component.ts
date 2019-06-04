@@ -44,7 +44,7 @@ export class TakeComponent implements OnInit {
       withCredentials: false
     };
 
-    var parameter = JSON.stringify({ Scooter: codice.value,idUtente: this.cookieService.get('ID'), latitudine: 22, logitudine: 22});
+    var parameter = JSON.stringify({ Scooter: codice.value, idUtente: this.cookieService.get('ID'), latitudine: 22, logitudine: 22});
     this.http.post('https://3000-c0ecda88-6304-4e5f-a369-0d9bcbc76e66.ws-eu0.gitpod.io/takeOn',null, options)
       .subscribe(data => {
         if(data[0].message == "OK"){

@@ -2,7 +2,9 @@
   <h3>Segnala</h3>
   <form>
     <div class="form-group">
+      <label>numero monopattino</label>
       <input type="number" placeholder="Inserisci numero monopattino" class="form-control" #Scooter><br>
+      <label for="password">descrizione problema</label>
       <textarea type="text" placeholder="Descrizione problema" class="form-control" #tipo></textarea><br>
       <button (click)="segnala(Scooter, tipo)" class="btn btn-danger">Segnala</button><br>
     </div>
