@@ -5,7 +5,10 @@ import { first } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 
-@Component({templateUrl: 'register.component.html'})
+@Component({templateUrl: 'register.component.html',
+selector: 'app-register',
+  styleUrls: ['./register.component.css']
+})
 export class RegisterComponent implements OnInit {
   @Input() cookieService:CookieService;
     registerForm: FormGroup;
@@ -13,7 +16,6 @@ export class RegisterComponent implements OnInit {
     submitted = false;
 
     constructor(
-        private formBuilder: FormBuilder,
         private router: Router,
         public http: HttpClient
     ){}
@@ -41,7 +43,7 @@ export class RegisterComponent implements OnInit {
     this.loading = true;
     this.http.post('https://3000-c0ecda88-6304-4e5f-a369-0d9bcbc76e66.ws-eu0.gitpod.io/register',null, options  )
       .subscribe(data => {
-        if(data[0].message == "OK"){
+        if(data[0].mess == "OK"){
           this.cookieService.set('ID','username');
           //this.router.navigate(['/home']);
           location.reload();
